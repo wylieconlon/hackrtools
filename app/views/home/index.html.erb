@@ -1,2 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<hgroup>
+<h1>Hacker Tools</h1>
+<h2>The toolbox for developers</h2>
+</hgroup>
+
+
+<h2>Supafly Snippets</h2>
+
+<% @snippets.each do |s| %>
+  <li><%= s.description %></li>
+<% end %>
+
+<h2>Ballin Articles</h2>
+
+<% @articles.each do |a| %>
+  <li><%= a.title %></li>
+<% end %>
