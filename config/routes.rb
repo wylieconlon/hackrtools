@@ -1,4 +1,6 @@
 Hckrtools::Application.routes.draw do
+  resources :tags
+
   get "home/index"
 
   resources :snippets
