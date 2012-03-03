@@ -1,0 +1,29 @@
+<h1>Listing snippets</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Link</th>
+    <th>Code</th>
+    <th>Public</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @snippets.each do |snippet| %>
+  <tr>
+    <td><%= snippet.description %></td>
+    <td><%= snippet.link %></td>
+    <td><%= snippet.code %></td>
+    <td><%= snippet.public %></td>
+    <td><%= link_to 'Show', snippet %></td>
+    <td><%= link_to 'Edit', edit_snippet_path(snippet) %></td>
+    <td><%= link_to 'Destroy', snippet, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Snippet', new_snippet_path %>
