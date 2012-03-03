@@ -5,9 +5,7 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3'
 
 group :production do
   gem 'pg'
@@ -20,9 +18,9 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
-  gem 'bootstrap-sass'
-  gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git'  # Nice form builder
-  gem 'tabulous', '~> 1.2.0'  # Navigation tabs
+#  gem 'bootstrap-sass'
+#  gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git'  # Nice form builder
+#  gem 'tabulous', '~> 1.2.0'  # Navigation tabs
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
