@@ -1,25 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Description:</b>
-  <%= @snippet.title %>
-</p>
+<%= render @snippet %>
 
-<p>
-  <b>Link:</b>
-  <%= @snippet.link %>
-</p>
-
-<p>
-  <b>Code:</b>
-  <%= @snippet.code %>
-</p>
-
-<p>
-  <b>Public:</b>
-  <%= @snippet.public %>
-</p>
-
+<br>
 
 <%= link_to 'Edit', edit_snippet_path(@snippet) %> |
 <%= link_to 'Back', snippets_path %>
