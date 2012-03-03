@@ -1,0 +1,9 @@
+<h1>Listing snippets</h1>
+
+<% @snippets.each do |snippet| %>
+  <%= render snippet %>
+<% end %>
+
+<br />
+
+<%= link_to 'New Snippet', new_snippet_path %>
