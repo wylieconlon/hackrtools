@@ -11,11 +11,15 @@
 
   <h1><%= link_to "Hackr Tools", root_path %></h1>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= msg %>
+    </div>
+  <% end %>
 
   <%= yield %>
 
-	</div>
+  </div>
 </body>
 </html>
