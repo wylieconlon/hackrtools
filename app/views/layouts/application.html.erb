@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hckrtools</title>
+  <title>Hackrtools</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <hgroup>
-  <h1>Hackr Tools</h1>
-  <h2>Toolboxes for developers</h2>
-  </hgroup>
+  <div class="container">
+
+  <h1><%= link_to "Hackr Tools", root_path %></h1>
 
 <%= yield %>
-
+	
+	</div>
 </body>
 </html>
