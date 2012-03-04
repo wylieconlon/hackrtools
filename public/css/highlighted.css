@@ -52,7 +52,6 @@ table {
 }
 .prettyprint ol.linenums {
 	list-style: decimal outside;
-	padding-left: 47px;
 	color:#AFAFAF;
 	font-size:12px;
 }
