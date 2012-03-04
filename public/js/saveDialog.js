@@ -67,7 +67,7 @@ hckrtools.saveDialog = {
 		    snip = options.snip || null,
 		    that = hckrtools.saveDialog;
 		
-		var request = "http://hckrtools.com/" + type + "/new"
+		var request = "http://hackrtools.com/" + type + "/new"
 
 		var option = {
 			title: document.title,
