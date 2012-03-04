@@ -7,12 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <hgroup>
-  <h1>Hackr Tools</h1>
-  <h2>Toolboxes for developers</h2>
-  </hgroup>
 
-<%= yield %>
+  <header>
+    <hgroup>
+      <h1>Hackr Tools</h1>
+      <h2>Toolboxes for developers</h2>
+    </hgroup>
+  </header>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+
+  <%= yield %>
 
 </body>
 </html>
