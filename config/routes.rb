@@ -1,5 +1,7 @@
 Hckrtools::Application.routes.draw do
   resources :items
+  resources :articles
+  resources :snippets
 
   devise_for :users
 
