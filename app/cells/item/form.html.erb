@@ -21,10 +21,12 @@
     <%= f.text_field :link %>
   </div>
   
+  <% if @hasCode %>
   <div class="field">
     <%= f.label :code %><br />
     <%= f.text_area :code %>
   </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :public %><br />

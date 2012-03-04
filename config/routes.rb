@@ -3,12 +3,16 @@ Hckrtools::Application.routes.draw do
     get 'add'
   end
   resources :articles do
-    get 'form', :on => :collection
     get 'create', :on => :collection
+    member do
+      get 'form'
+    end
   end
   resources :snippets do
-    get 'form', :on => :collection
     get 'create', :on => :collection
+    member do
+      get 'form'
+    end
   end
 
   get 'tags/:query', :to => 'tags#nearest'

@@ -21,6 +21,7 @@ class SnippetsController < ItemsController
   end
 
   def form
-    render :text => "This is my snippet form"
+    @item = Item.find(params[:id])
+    render :layout => false
   end
 end
