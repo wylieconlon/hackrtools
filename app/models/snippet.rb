@@ -1,5 +1,4 @@
-class Snippet < ActiveRecord::Base
-  validates_presence_of :title, :code
-  validates :title, :length => { :maximum => 140 }
-  has_and_belongs_to_many :tags
+class Snippet < Item
+  attr_accessible :code
+  validates_presence_of :code
 end

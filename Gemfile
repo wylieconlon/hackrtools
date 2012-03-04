@@ -14,6 +14,9 @@ group :production do
   gem 'thin'
 end
 
+gem 'devise' # Authentication! Authorization! It does it all!
+gem 'acts-as-taggable-on', '~> 2.2.2' # TAGS!
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
