@@ -1,8 +1,8 @@
 Hckrtools::Application.routes.draw do
 
-  resources :items do
-    get 'add'
-  end
+  match '/add/:type' => 'items#add'
+
+  #  match '/add/:type/*args' => 'items#add'
 
   resources :articles do
     get 'create', :on => :collection
@@ -25,6 +25,7 @@ Hckrtools::Application.routes.draw do
   devise_for :users
 
   root :to => 'home#index'
+
 
   # Login routes
   devise_scope :user do

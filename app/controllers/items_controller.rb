@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :authenticate_user!
-  skip_before_filter :authenticate_user!, :only => [:index, :show]
+  skip_before_filter :authenticate_user!, :only => [:index, :show, :add]
 
   before_filter :join_tag_list, :only => [:create, :update]
 
@@ -53,6 +53,30 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @item }
+    end
+  end
+
+  # GET /add/:type/uid=:uid&title=:title&link=:link&public=:public&type=:type&code=:code
+  # Expects: uid      int     The user's id
+  #          link     string  The item link
+  #          public   bool    Is the item public?
+  #          code     string  The code for this item (if it is a snippet)
+  #          tags     string  A list of tags (ruby-on-rails+web-development)
+  #
+  def add
+    @user = User.find(params[:uid])
+    @item = Item.new(:title => params[:title], :link => params[:link],
+                     :public => params[:public], :type => params[:type],
+                     :code => params[:code], :tags => params[:tags])
+
+    respond_to do |format|
+      if @item.save
+        format.html { redirect_to root_url_path, notice: 'Item was successfully updated.' }
+        format.json { render json: @item }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
     end
   end
 
