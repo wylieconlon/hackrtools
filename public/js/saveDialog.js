@@ -78,7 +78,7 @@ hckrtools.saveDialog = {
 			if(func) {
 				func(response);
 			}	
-		}).error(function() {
+		}).error(function(response) {
 			alert('Sorry! Something went wrong');
 		});
 
