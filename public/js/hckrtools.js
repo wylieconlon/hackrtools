@@ -17,6 +17,7 @@ hckrtools = {
 
 		$.each(snippets, function(i, val) {
 			$(this).prepend(controls);
+			var div = $(this).parent();
 		});
 		$('div.hckrsnippet > span').css('float', 'right');
 	},
@@ -27,10 +28,13 @@ hckrtools = {
 		}
 		return arr.join('\n') 
 	},
+	copy: function() {
+		
+	},
 	load: function() {
 		var sh=document.createElement('script')
 		sh.setAttribute("type","text/javascript")
-		sh.setAttribute("src", "http://hackrtools.com/jquery.syntaxhighlighter.min.js")
+		sh.setAttribute("src", "http://hackrtools.com/js/jquery.syntaxhighlighter.min.js")
 		document.getElementsByTagName("head")[0].appendChild(sh)
 	},
 	init: function($) {
@@ -44,3 +48,4 @@ hckrtools = {
 		}
 	}
 }
+hckrtools.load()
