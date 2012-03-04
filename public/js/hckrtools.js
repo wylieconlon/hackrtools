@@ -40,7 +40,7 @@ hckrtools = {
 			var options = {
 				text: text,
 				url: document.location.href,
-				type: "snippet",
+				type: "snippets",
 				snip: snippet,
 				callback: hckrtools.share
 			}
@@ -60,8 +60,8 @@ hckrtools = {
 		var options = {
 			text: text,
 			url : document.location.href,
-			type: 'snippet',
-			user: null,
+			type: 'snippets',
+			user: hckrtools.uid,
 			snip: snip
 		}
 		hckrtools.saveDialog.save(options);	
@@ -73,7 +73,7 @@ hckrtools = {
 		} 
 	},
 	edit: function(snip) {
-		hckrtools.saveDialog.create({type:"snippet"});
+		hckrtools.saveDialog.create({type:"snippets"});
 	},
 	flatten: function($, $el) {
 		var arr = $el.html().split(/<\s*br\s*\/?\s*>/i)
@@ -88,9 +88,10 @@ hckrtools = {
 	},
 	init: function($) {
 		var that = hckrtools;
+		hckrtools.uid = "me@useric.com"
 		
 		if($ === undefined) {
-			$ = jQuery;
+			$ = jQuery
 		} else {
 			
 		}
@@ -102,9 +103,9 @@ hckrtools = {
 		that.isolateElements($);
 		that.createControls($);
 
-// 		if(typeof jQueryOld !== "undefined") {
-// 			$ = jQueryOld.noConflict(true);
-// 		}
+		if(typeof jQueryOld !== "undefined") {
+			$ = jQueryOld.noConflict(true);
+		}
 	},
 
 	includeJs: function(b) {
