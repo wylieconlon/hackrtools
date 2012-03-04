@@ -1,11 +1,9 @@
 Hckrtools::Application.routes.draw do
+  resources :items
+
   devise_for :users
 
   get "home/index"
-
-  resources :snippets
-  resources :articles
-
   root :to => 'home#index'
 
 
