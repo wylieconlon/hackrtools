@@ -97,9 +97,9 @@ hckrtools = {
 		that.isolateElements($);
 		that.createControls($);
 
-		if(typeof jQueryOld !== "undefined") {
-			$ = jQueryOld.noConflict(true);
-		}
+// 		if(typeof jQueryOld !== "undefined") {
+// 			$ = jQueryOld.noConflict(true);
+// 		}
 	},
 
 	includeJs: function(b) {
