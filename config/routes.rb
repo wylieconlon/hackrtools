@@ -21,6 +21,8 @@ Hckrtools::Application.routes.draw do
   devise_for :users
 
   root :to => 'home#index'
+  
+  match '/:types/add/:stuff', :to => 'items#add'
 
   # Login routes
   devise_scope :user do

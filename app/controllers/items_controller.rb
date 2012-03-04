@@ -56,6 +56,24 @@ class ItemsController < ApplicationController
     end
   end
 
+  # GET /items/new?id=title=:title&link=:link&public=:public&type=:type&code=:code
+  def add
+    @item = Item.new(:title => params[:stuff][:title], :link[:stuff] => params[:link],
+                     :public => params[:stuff][:public], :type[:stuff] => params[:type],
+                     :code => params[:stuff][:code], :tags[:stuff] => params[:tags])
+    @item.save
+
+    respond_to do |format|
+      if @item.update_attributes(params[:item])
+        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.json { render json: @item }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])

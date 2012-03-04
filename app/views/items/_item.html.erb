@@ -4,6 +4,7 @@
 <pre>
 <%= item.code %>
 </pre>
-<%= link_to "Source", item.link %>
+<%= link_to "Source", item.link %> <br>
+Tags: <%= item.tags.join(", ") %>
 
 <% end %>
