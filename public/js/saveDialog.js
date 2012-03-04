@@ -17,16 +17,9 @@ hckrtools.saveDialog = {
 				for(var field in fields) {
 					updates[field.title()] = field.val();
 				}
-				$.ajax({
-					data: updates,
-					success: function() {
-						that.destroy();
-					},
-					error: function() {
-						alert('Failed');
-					},
-					type: "PUT",
-					url: request
+				var request = "http://hackrtools.com/" + options.type + "/" + options.id + "/update";
+				$.get(reqest, updates, function() {
+					that.destroy();
 				});
 			});
 			$('.hckrSave').find('button.cancel').click(function() {
@@ -52,7 +45,7 @@ hckrtools.saveDialog = {
 		    snip = options.snip || null,
 		    that = hckrtools.saveDialog;
 	
-		var request = "http://hckrtools.com/" + type + "/" + id + "/edit";
+		var request = "http://hackrtools.com/" + type + "/" + id + "/edit";
 
 		$.get(request, callback);
 	},
@@ -78,7 +71,7 @@ hckrtools.saveDialog = {
 
 		if(type == "snippet") { option.code = text; }
 
-		$.post(request, option, function(response) {
+		$.get(request, option, function(response) {
 			hckrtools.saveSuccess(snip);
 			that.savingHide();	
 		});
