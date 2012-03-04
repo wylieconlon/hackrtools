@@ -11,15 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304041506) do
-
-  create_table "articles", :force => true do |t|
-    t.string   "title"
-    t.string   "link"
-    t.boolean  "public",     :default => true
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120304044427) do
 
   create_table "items", :force => true do |t|
     t.string   "title"
@@ -29,15 +21,6 @@ ActiveRecord::Schema.define(:version => 20120304041506) do
     t.string   "type"
     t.text     "code"
     t.boolean  "public",     :default => true
-  end
-
-  create_table "snippets", :force => true do |t|
-    t.string   "title"
-    t.string   "link"
-    t.text     "code"
-    t.boolean  "public",     :default => true
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
   end
 
   create_table "taggings", :force => true do |t|
