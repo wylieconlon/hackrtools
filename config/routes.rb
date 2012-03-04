@@ -8,7 +8,6 @@ Hckrtools::Application.routes.draw do
   get "home/index"
   root :to => 'home#index'
 
-
   # Login routes
   devise_scope :user do
     get 'login', :to => 'devise/sessions#new'
