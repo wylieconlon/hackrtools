@@ -1,6 +1,10 @@
 require 'csv'
 
 class ItemCell < Cell::Rails
+  include Devise::Controllers::Helpers
+  
+  helper_method :current_user
+
   def show(args)
     @item = args[:item]
     @hasCode = defined?(@item.code)
@@ -13,7 +17,7 @@ class ItemCell < Cell::Rails
   
   def form(args)
     @item = args[:item]
-    @hasCode = args[:type] == "Snippet"
+    @hideCode = args[:type] == "Article"
     
     render
   end

@@ -1,5 +1,4 @@
 body {
-	//background: #fdf6e3;
 	background: $grayLighter;
 }
 
@@ -10,9 +9,11 @@ body {
 
 .content {
 	background: #fff;
-	@include border-radius(5px);
+
+	padding: 15px;
 	border: 1px solid #ddd;
 	margin-bottom: 2em;
+	@include border-radius(5px);
 }
 
 .item {
@@ -34,4 +35,12 @@ body {
 	&:hover {
 		background: darken($tag-bg, 15%);
 	}
+}
+
+form .field input, form .field textarea {
+	width: 100%;
+}
+
+form .field {
+	margin-bottom: 1em;
 }

@@ -19,6 +19,7 @@ Hckrtools::Application.routes.draw do
   end
 
   match '/items/tagged/:tags/' => 'items#tagged'
+  match '/items/new'           => 'items#new'
 
   get 'tags/:query', :to => 'tags#nearest'
 
