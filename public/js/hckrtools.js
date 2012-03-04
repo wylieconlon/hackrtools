@@ -21,7 +21,7 @@ hckrtools = {
 	},
 	createControls: function($) {
 		var snippets = $('div.hckrsnippet'),
-		    controls = "<span class='copy'>Copy</span><span class='save'>Save</span>";
+		    controls = "<span class='share'>Share</span><span class='save'>Save</span>";
 
 		$.each(snippets, function(i, val) {
 			$(this).prepend(controls);
@@ -37,15 +37,18 @@ hckrtools = {
 				url: document.location.href,
 				type: "snippet",
 				snip: snippet,
+				callback: hckrtools.share
 			}
-			hckrtools.copy(options);
+			hckrtools.save(options);
 		});
 		snippet.find('.save').click(function() {
 			hckrtools.save(text, snippet);
 		});
 	},
-	copy: function(text) {
-		
+	share: function(opts) {
+		var share = document.createElement('div')
+		share.setAttribute('class', 'hckrShare')
+		$('body').append(share);
 	},
 	save: function(text, snip) {
 		var options = {
