@@ -1,15 +1,7 @@
 <h1>Listing articles</h1>
 
 <div class="articles">
-<% if not @articles.empty? %>
-<ul>
-<% for item in @articles %>
-	<%= render :partial => "partials/item", :locals => { :item => item } %>
-<% end %>
-</ul>
-<% else %>
-No articles :(
-<% end %>
+<%= render_cell :items, :list, :items => @articles %>
 </div>
 
 <%= link_to 'New Article', new_article_path %>
