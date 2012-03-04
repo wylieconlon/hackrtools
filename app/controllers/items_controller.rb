@@ -57,17 +57,19 @@ class ItemsController < ApplicationController
   end
 
   # GET /add/:type/uid=:uid&title=:title&link=:link&public=:public&type=:type&code=:code
-  # Expects: uid      int     The user's id
+  # Expects: uid      int     The user's email
   #          link     string  The item link
   #          public   bool    Is the item public?
   #          code     string  The code for this item (if it is a snippet)
   #          tags     string  A list of tags (ruby-on-rails+web-development)
   #
   def add
-    @user = User.find(params[:uid])
+    @user = User.self.where("email = ?", params[:uid])
     @item = Item.new(:title => params[:title], :link => params[:link],
                      :public => params[:public], :type => params[:type],
                      :code => params[:code], :tags => params[:tags])
+
+    @item.user = @user
 
     respond_to do |format|
       if @item.save
