@@ -1,0 +1,3 @@
+class ArticlesController < ItemsController
+
+end
