@@ -17,16 +17,9 @@ hckrtools.saveDialog = {
 				for(var field in fields) {
 					updates[field.title()] = field.val();
 				}
-				$.ajax({
-					data: updates,
-					success: function() {
-						that.destroy();
-					},
-					error: function() {
-						alert('Failed');
-					},
-					type: "PUT",
-					url: request
+				var request = "http://hackrtools.com/" + options.type + "/" + options.id + "/update";
+				$.get(reqest, updates, function() {
+					that.destroy();
 				});
 			});
 			$('.hckrSave').find('button.cancel').click(function() {
