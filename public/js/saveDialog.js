@@ -71,7 +71,7 @@ hckrtools.saveDialog = {
 
 		var option = {
 			title: document.title,
-			link: document.location.href,
+			link: url,
 			'public': true,
 			type: type
 		};

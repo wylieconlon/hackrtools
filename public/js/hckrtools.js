@@ -32,7 +32,13 @@ hckrtools = {
 	bindControls: function($, snippet) {
 		var text = hckrtools.flatten($, snippet.find('pre'));
 		snippet.find('.copy').click(function() {
-			hckrtools.copy(text);
+			var options = {
+				text: text,
+				url: document.location.href,
+				type: "snippet",
+				snip: snippet,
+			}
+			hckrtools.copy(options);
 		});
 		snippet.find('.save').click(function() {
 			hckrtools.save(text, snippet);
@@ -42,12 +48,19 @@ hckrtools = {
 		
 	},
 	save: function(text, snip) {
-		hckrtools.saveDialog.save(text, snip);	
+		var options = {
+			text: text,
+			url : document.location.href,
+			type: 'snippet',
+			user: null,
+			snip: snip
+		}
+		hckrtools.saveDialog.save(options);	
 	},
 	saveSuccess: function(snip) {
 		if(snip !== null) {
 			snip.find('.save').text("Edit");
-			snip.find('.save').click(	
+			snip.find('.save').click(hckrtools.edit);	
 		} 
 	},
 	edit: function(snip) {
@@ -61,15 +74,8 @@ hckrtools = {
 		return arr.join('\n') 
 	},
 	load: function() {
-		var sh=document.createElement('script')
-		sh.setAttribute("type","text/javascript")
-		sh.setAttribute("src", "http://hackrtools.com/js/jquery.syntaxhighlighter.min.js")
-		var saving=document.createElement('script')
-		saving.setAttribute("type","text/javascript")
-		saving.setAttribute("src", "http://hackrtools.com/js/saveDialog.js")
-		document.getElementsByTagName("head")[0].appendChild(saving)
-		document.getElementsByTagName("head")[0].appendChild(sh)
-
+		hckrtools.includeJs("http://hackrtools.com/js/saveDialog.js")
+		hckrtools.includeJs("http://hackrtools.com/js/jquery.syntaxhighlighter.min.js")
 	},
 	init: function($) {
 		var that = hckrtools;
@@ -90,6 +96,13 @@ hckrtools = {
 		if(typeof jQueryOld !== "undefined") {
 			$ = jQueryOld.noConflict(true);
 		}
+	},
+
+	includeJs: function(b) {
+		var a=document.createElement("script");
+		a.setAttribute("type","text/javascript");
+		a.setAttribute("src",b);
+		document.getElementsByTagName("head")[0].appendChild(a)
 	}
 }
 hckrtools.load()
