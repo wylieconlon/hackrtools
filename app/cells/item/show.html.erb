@@ -1,11 +1,9 @@
 <li>
 <%= link_to @item.title, @item.link %>
 
-<% if @item.link %>
-  Source: <%= @item.link || "None" %><br>
-<% end %>
-
 <% if defined?(@item.code) && !@item.code.nil? %>
 	<pre><%= @item.code %></pre>
 <% end %>
+
+
 </li>

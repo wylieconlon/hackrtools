@@ -4,4 +4,11 @@ class ItemCell < Cell::Rails
     
     render
   end
+  
+  def form(args)
+    @item = args[:item]
+    @hasCode = args[:type] == "Snippet"
+    
+    render
+  end
 end
