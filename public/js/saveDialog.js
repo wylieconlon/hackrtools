@@ -52,7 +52,7 @@ hckrtools.saveDialog = {
 		    snip = options.snip || null,
 		    that = hckrtools.saveDialog;
 	
-		var request = "http://hckrtools.com/" + type + "/" + id + "/edit";
+		var request = "http://hackrtools.com/" + type + "/" + id + "/edit";
 
 		$.get(request, callback);
 	},
@@ -78,7 +78,7 @@ hckrtools.saveDialog = {
 
 		if(type == "snippet") { option.code = text; }
 
-		$.post(request, option, function(response) {
+		$.get(request, option, function(response) {
 			hckrtools.saveSuccess(snip);
 			that.savingHide();	
 		});
