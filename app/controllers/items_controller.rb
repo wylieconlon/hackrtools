@@ -65,12 +65,12 @@ class ItemsController < ApplicationController
   #          tags     string  A list of tags (ruby-on-rails+web-development)
   #
   def add
-    @user = User.self.where("email = ?", params[:uid])
+    @user = User.where(:email => params[:uid])
     @item = Item.new(:title => params[:title], :link => params[:link],
                      :public => params[:public], :type => params[:type],
                      :code => params[:code], :tags => params[:tags])
 
-    @item.user = @user
+    #@item.user = @user
 
     respond_to do |format|
       if @item.save

@@ -44,6 +44,7 @@ hckrtools = {
 				snip: snippet,
 				callback: hckrtools.share
 			}
+			hckrtools.shareLink = $(this);
 			hckrtools.saveDialog.save(options);
 		});
 		snippet.find('.save').click(function() {
@@ -53,7 +54,7 @@ hckrtools = {
 	share: function(opts) {
 		var share = document.createElement('div')
 		share.setAttribute('class', 'hckrShare')
-		$('body').append(share);
+		$(hckrtools.shareLink).append(share);
 		$('.hckrShare').html(hckrtools.shareTemplate(opts.link));
 	},
 	save: function(text, snip) {

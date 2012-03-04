@@ -79,7 +79,6 @@ hckrtools.saveDialog = {
 				func(response);
 			}	
 		}).error(function(response) {
-			alert('Sorry! Something went wrong');
 			that.savingHide();
 		});
 
@@ -93,7 +92,7 @@ hckrtools.saveDialog = {
 		var saving = document.createElement('div');
 		saving.setAttribute('class', 'hckrSaving');
 		$('body').append(saving);
-		$('.hckrSaving').text("Loading...");
+		$('.hckrSaving').text("Saving...");
 	},
 	/**
 	 * Remove the 'saving...' indicator
