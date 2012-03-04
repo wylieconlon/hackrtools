@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  #before_filter :authenticate_user!
-  #skip_before_filter :authenticate_user!, :only => [:index, :show, :add]
+  before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!, :only => [:index, :show, :add]
 
   after_filter :set_access_control_headers
   before_filter :join_tag_list, :only => [:create, :update]
