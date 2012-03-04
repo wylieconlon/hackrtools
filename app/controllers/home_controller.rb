@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     # show dashboard for authenticated users
-    if user_signed_in?
+    if !current_user.nil?
       @items = Item.all
       render 'items/index'
     end
