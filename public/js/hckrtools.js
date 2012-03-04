@@ -31,11 +31,17 @@ hckrtools = {
 	bindControls: function($, snippet) {
 		var text = hckrtools.flatten($, snippet.find('pre'));
 		snippet.find('.copy').click(function() {
-			alert(text);
+			hckrtools.copy(text);
 		});
 		snippet.find('.save').click(function() {
 			hckrtools.openSaveDialog(text);
 		});
+	},
+	copy: function(text) {
+		
+	},
+	openSaveDialog: function(text) {
+		
 	},
 	flatten: function($, $el) {
 		var arr = $el.html().split(/<\s*br\s*\/?\s*>/i)
