@@ -1,15 +1,5 @@
 <h1>Listing snippets</h1>
 
-<div class="snippets">
-<% if not @snippets.empty? %>
-<ul>
-<% for item in @snippets %>
-	<%= render :partial => "partials/item", :locals => { :item => item } %>
-<% end %>
-</ul>
-<% else %>
-No snippets :(
-<% end %>
-</div>
+<%= render_cell :items, :list, :items => @snippets %>
 
 <%= link_to 'New Snippet', new_snippet_path %>

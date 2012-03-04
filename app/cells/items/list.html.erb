@@ -1,0 +1,13 @@
+<% if not @items.empty? %>
+
+<ul>
+<% for item in @items %>
+	<%= render_cell :item, :show, :item => item %>
+<% end %>
+</ul>
+
+<% else %>
+
+No snippets :(
+
+<% end %>
