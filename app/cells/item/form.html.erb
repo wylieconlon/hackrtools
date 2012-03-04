@@ -1,3 +1,4 @@
+<div class="form-container">
 <%= form_for @item, :url => { :action => 'create' }, :html => { :class => "form-horizontal" } do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
@@ -43,3 +44,4 @@
     <%= f.submit "Save snippet", :class => "btn-primary" %>
   </div>
 <% end %>
+</div>

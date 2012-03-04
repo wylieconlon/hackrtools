@@ -29,6 +29,10 @@ header {
 	@include border-radius(3px);
 }
 
+.content-wrapper {
+	padding: 15px;
+}
+
 .item {
 	list-style-type: none;
 	padding: 10px;

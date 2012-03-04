@@ -23,13 +23,14 @@
   <div class="content">
   	<div class="row">
   	<div class="span8">
-	<%= yield %>
+  		<div class="content-wrapper">
+		<%= yield %>
+		</div>
 	</div>
 	
 	<div class="actions span4">
 	<%= link_to 'New Article', new_article_path %>
 	<%= link_to 'New Snippet', new_snippet_path %>
-	
 	</div>
 	</div>
   </div>
