@@ -1,8 +1,10 @@
 Hckrtools::Application.routes.draw do
 
-  resources :items do
-    get 'add'
-  end
+  #resources :items do
+  #  get 'add', :to => 'items#add'
+  #end
+
+    match '/:type/add/*args' => 'items#add'
 
   resources :articles do
     get 'form', :on => :collection
@@ -21,8 +23,7 @@ Hckrtools::Application.routes.draw do
   devise_for :users
 
   root :to => 'home#index'
-  
-  match '/:types/add/:stuff', :to => 'items#add'
+
 
   # Login routes
   devise_scope :user do

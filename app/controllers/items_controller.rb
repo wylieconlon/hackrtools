@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  # GET /items/new?id=title=:title&link=:link&public=:public&type=:type&code=:code
+  # GET /items/add?id=title=:title&link=:link&public=:public&type=:type&code=:code
   def add
     @item = Item.new(:title => params[:stuff][:title], :link[:stuff] => params[:link],
                      :public => params[:stuff][:public], :type[:stuff] => params[:type],
@@ -65,7 +65,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.html { redirect_to root_url_path, notice: 'Item was successfully updated.' }
         format.json { render json: @item }
       else
         format.html { render action: "new" }
