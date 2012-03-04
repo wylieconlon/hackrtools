@@ -1,4 +1,4 @@
-<li>
+<li class="item <%= @hasCode ? 'snippet' : 'article' %>">
 <%= link_to @item.title, @item.link %>
 
 <% if defined?(@item.code) && !@item.code.nil? %>

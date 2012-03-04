@@ -97,7 +97,8 @@ hckrtools = {
 		
 		$.SyntaxHighlighter.init({
 			lineNumbers:true,
-			stripEmptyStartFinishLines:true
+			stripEmptyStartFinishLines:true,
+			
 		});
 		that.isolateElements($);
 		that.createControls($);
