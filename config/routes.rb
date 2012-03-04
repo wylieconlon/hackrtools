@@ -9,6 +9,13 @@ Hckrtools::Application.routes.draw do
   root :to => 'home#index'
 
 
+  # Login routes
+  devise_scope :user do
+    get 'login', :to => 'devise/sessions#new'
+    get 'logout', :to => 'devise/sessions#destroy'
+    get 'signup', :to => 'devise/registrations#new'
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
