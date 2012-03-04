@@ -1,6 +1,7 @@
 class ItemCell < Cell::Rails
   def show(args)
     @item = args[:item]
+    @hasCode = defined?(@item.code)
     
     render
   end

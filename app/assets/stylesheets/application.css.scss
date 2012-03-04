@@ -1,6 +1,5 @@
-$blue: #268bd2;
+$blue: #2AA198;
 $linkColor: $blue;
-$linkColorHover: darken($linkColor, 15%);
 
-@import "bootstrap"
-@import url('main.scss')
+@import "bootstrap";
+@import "main";
