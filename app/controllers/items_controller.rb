@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   # GET /items/new.json
   def new
+    setup_sti_model
     @item = Item.new
 
     respond_to do |format|
@@ -43,6 +44,7 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    setup_sti_model
     @item = Item.new(params[:item])
 
     respond_to do |format|
@@ -83,4 +85,20 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+  def setup_sti_model
+    # This lets us set the "type" attribute from forms and querystrings
+    model = nil
+    if !params[:item].blank? and !params[:item][:type].blank?
+      model = params[:item].delete(:type).constantize.to_s
+    end
+      @item = Item.new(params[:item])
+      @item.type = model
+    end
+  end
+
+
+
 end
