@@ -1,5 +1,8 @@
 <li class="item <%= @hasCode ? 'snippet' : 'article' %>">
-<%= link_to @item.title, @item.link %>
+<h3>
+<%= link_to @item.title, @item.link, :class => 'title' %>
+<span class="ago"><%= @timeAgo %></span>
+</h3>
 
 <% if defined?(@item.code) && !@item.code.nil? %>
 	<pre><%= @item.code %></pre>
