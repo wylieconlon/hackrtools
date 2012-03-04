@@ -1,8 +1,6 @@
 Hckrtools::Application.routes.draw do
   devise_for :users
 
-  resources :tags
-
   get "home/index"
 
   resources :snippets
