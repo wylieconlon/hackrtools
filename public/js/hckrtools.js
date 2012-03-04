@@ -13,13 +13,22 @@ hckrtools = {
 	},
 	createControls: function($) {
 		var snippets = $('div.hckrsnippet'),
-		    controls = "<span class='copy'>Copy</span><span class='save'>Save</span><span class='Edit'>Edit</span>";
+		    controls = "<span class='copy'>Copy</span><span class='save'>Save</span>";
 
 		$.each(snippets, function(i, val) {
 			$(this).prepend(controls);
-			var div = $(this).parent();
+			hckrtools.bindControls($, $(this));
 		});
 		$('div.hckrsnippet > span').css('float', 'right');
+	},
+	bindControls: function($, snippet) {
+		var text = hckrtools.flatten($, snippet.find('pre'));
+		snippet.find('.copy').click(function() {
+			alert(text);
+		});
+		snippet.find('.save').click(function() {
+			hckrtools.openSaveDialog(text);
+		});
 	},
 	flatten: function($, $el) {
 		var arr = $el.html().split(/<\s*br\s*\/?\s*>/i)
@@ -27,9 +36,6 @@ hckrtools = {
 			arr[i] = arr[i].replace(/(<([^>]+)>)/ig,"")
 		}
 		return arr.join('\n') 
-	},
-	copy: function() {
-		
 	},
 	load: function() {
 		var sh=document.createElement('script')
