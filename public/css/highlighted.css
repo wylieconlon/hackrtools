@@ -107,14 +107,15 @@ pre table {
 .hckrsnippet > span {
 	display: inline-block;
 	padding: 2px;
-	background: #eee;
+	background: #fff;
+	border: 1px solid #ddd;
 	margin-left: 10px;
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
 	        border-radius: 3px;
 }
 .hckrsnippet > span:hover {
-	background: #ddd;
+	border-color: 1px solid #bbb;
 	cursor: pointer;
 	text-decoration: underline;
 }
