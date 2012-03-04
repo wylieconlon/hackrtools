@@ -8,11 +8,8 @@
 </head>
 <body>
   <div class="container">
-  
-  <header>
-    <h1><%= link_to "Hackr Tools", root_path %></h1> 
-  </header>
-  
+  <h1><%= link_to image_tag('logo.png'), root_path %></h1>
+
   <% flash.each do |name, msg| %>
     <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
       <a class="close" data-dismiss="alert">×</a>

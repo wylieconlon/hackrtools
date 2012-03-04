@@ -15,20 +15,30 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
+
   <div class="field">
     <%= f.label :link %><br />
     <%= f.text_field :link %>
   </div>
+  
+  <% if @hasCode %>
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_area :code %>
+  </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :public %><br />
     <%= f.check_box :public %>
   </div>
+  
   <div class="field">
     <%= f.label :tag_list %><br />
     <%= f.text_field :tag_list %>
   </div>
   
   <div class="actions">
-    <%= f.submit :class => "btn-primary" %>
+    <%= f.submit "Save snippet", :class => "btn-primary" %>
   </div>
 <% end %>
