@@ -7,11 +7,12 @@ Hckrtools::Application.routes.draw do
     get 'form', :on => :collection
   end
 
+  get 'tags/:query', :to => 'tags#nearest'
+
   devise_for :users
 
   get "home/index"
   root :to => 'home#index'
-
 
   # Login routes
   devise_scope :user do
