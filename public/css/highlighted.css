@@ -105,10 +105,16 @@ pre table {
 }
 
 .hckrsnippet > span {
+	display: inline-block;
+	padding: 2px;
+	background: #eee;
 	margin-left: 10px;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
 }
 .hckrsnippet > span:hover {
-	color: red;
+	background: #ddd;
 	cursor: pointer;
 	text-decoration: underline;
 }
