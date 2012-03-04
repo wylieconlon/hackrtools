@@ -103,3 +103,16 @@ pre table {
 .prettyprint.alternate li.L9 {
 	background:#F5F5F5;
 }
+
+.hckrsnippet span {
+	margin-left: 10px;
+	text-decoration: underline;
+}
+.hckrsnippet span:hover {
+	color: red;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.hckrsnippet {
+       font-size: 12px;
+}       
