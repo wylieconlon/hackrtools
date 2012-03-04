@@ -11,11 +11,24 @@ body {
 .content {
 	background: #fff;
 	@include border-radius(5px);
-	//border: 1px solid #eee8d5;
 	border: 1px solid #ddd;
+	margin-bottom: 2em;
 }
 
 .item {
 	list-style-type: none;
 	padding: 10px;
+}
+
+.content-tag {
+	display: inline-block;
+	background: #839496;
+	padding: 2px 5px;
+	color: #fff;
+	@include border-radius(5px);
+	
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
 }

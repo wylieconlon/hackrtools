@@ -1,6 +1,3 @@
-<h1>Listing items tagged with <%= @tags.join(", ") %></h1>
+<h2>Listing items tagged with <%= @tags.join(", ") %></h2>
 
 <%= render_cell :items, :list, :items => @items %>
-
-<%= link_to 'New Article', new_article_path %>
-<%= link_to 'New Snippet', new_snippet_path %>

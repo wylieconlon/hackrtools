@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 
-//= require jquery.syntaxhighlighter.min.js
+//# require jquery.syntaxhighlighter.min.js
 
 $.SyntaxHighlighter.init({
 	lineNumbers:true,

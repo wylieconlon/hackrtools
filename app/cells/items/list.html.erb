@@ -1,6 +1,6 @@
 <% if not @items.empty? %>
 
-<ul class="unstyled">
+<ul class="items-list unstyled">
 <% for item in @items %>
 	<%= render_cell :item, :show, :item => item %>
 <% end %>

@@ -8,8 +8,16 @@
 </head>
 <body>
   <div class="container">
-  <h1><%= link_to image_tag('logo.png'), root_path %></h1>
 
+  <header>
+	<h1><%= link_to image_tag('logo.png'), root_path %></h1>
+
+	<div class="actions">
+	<%= link_to 'New Article', new_article_path %>
+	<%= link_to 'New Snippet', new_snippet_path %>
+	</div>
+  </header>
+  
   <% flash.each do |name, msg| %>
     <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
       <a class="close" data-dismiss="alert">×</a>
