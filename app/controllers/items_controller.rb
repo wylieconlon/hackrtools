@@ -70,7 +70,7 @@ class ItemsController < ApplicationController
                      :public => params[:public], :type => params[:type],
                      :code => params[:code], :tags => params[:tags])
 
-    @item.user = @user
+    #@item.user = @user
 
     respond_to do |format|
       if @item.save
