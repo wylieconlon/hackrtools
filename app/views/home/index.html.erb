@@ -1,5 +1,5 @@
-<h2>Supafly Snippets</h2>
 
+<<<<<<< HEAD
 <div class="snippets">
 <%= render_cell :items, :list, :items => @snippets %>
 </div>
@@ -9,3 +9,9 @@
 <div class="articles">
 <%= render_cell :items, :list, :items => @articles %>
 </div>
+=======
+<% @items.each do |i| %>
+  <li><%= link_to i.title, i %></li>
+<% end %>
+
+>>>>>>> items
