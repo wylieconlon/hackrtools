@@ -115,3 +115,17 @@ pre table {
 .hckrsnippet {
        font-size: 12px;
 }       
+.hckrSaving {
+	position: fixed;
+	width: 100px;
+	height: 10px;
+	top: 20px;
+	right: 20px;
+	background: lightgrey;
+	vertical-align: middle;
+	padding: 50px;
+	color: black;
+	-webkit-border-radius: 10px;
+	text-align: center;
+	-webkit-box-shadow: 0px 0px 10px #333;
+}
