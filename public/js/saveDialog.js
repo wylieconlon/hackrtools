@@ -67,6 +67,7 @@ hckrtools.saveDialog = {
 			title: document.title,
 			link: url,
 			'public': true,
+			uid: uid
 		};
 
 		if(type == "snippets") { option.code = text; }
