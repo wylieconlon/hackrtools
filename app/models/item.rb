@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :title, :link, :public, :type, :code
+  attr_accessible :title, :link, :public, :type, :code, :tag_list
   validates_presence_of :title, :public, :type
 
   acts_as_taggable_on :tags
