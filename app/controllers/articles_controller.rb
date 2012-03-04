@@ -20,6 +20,7 @@ class ArticlesController < ItemsController
   end
 
   def form
-    render :text => "This is my articles form"
+    @item = Item.find(params[:id])
+    render :layout => false
   end
 end
