@@ -8,10 +8,13 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
 */
 
 // overrite SASS variables here
 
+$blue: #268bd2;
+$linkColor: $blue;
+$linkColorHover: darken($linkColor, 15%);
+
 @import "bootstrap"
+@import url('main.scss')
