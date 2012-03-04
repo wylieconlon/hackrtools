@@ -58,6 +58,7 @@ hckrtools.saveDialog = {
 		    uid  = options.user,
 		    type = options.type || "articles",
 		    snip = options.snip || null,
+		    func = options.callback || null,
 		    that = hckrtools.saveDialog;
 		
 		var request = "http://hackrtools.com/" + type + "/new"
@@ -73,7 +74,10 @@ hckrtools.saveDialog = {
 
 		$.get(request, option, function(response) {
 			hckrtools.saveSuccess(snip);
-			that.savingHide();	
+			that.savingHide();
+			if(func) {
+				func(response);
+			}	
 		});
 
 		that.savingShow();
