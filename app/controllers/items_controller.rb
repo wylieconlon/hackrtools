@@ -40,8 +40,11 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    # mass assigning tags is a security vulnerability
+    sanitize_for_mass_assignment(params[:item][:tags])
+    
     @item = Item.new(params[:item])
-
+    
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
