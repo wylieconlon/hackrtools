@@ -1,27 +1,15 @@
 <h1>Listing articles</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Link</th>
-    <th>Public</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.link %></td>
-    <td><%= article.public %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<div class="articles">
+<% if not @articles.empty? %>
+<ul>
+<% for item in @articles %>
+	<%= render :partial => "partials/item", :locals => { :item => item } %>
 <% end %>
-</table>
-
-<br />
+</ul>
+<% else %>
+No articles :(
+<% end %>
+</div>
 
 <%= link_to 'New Article', new_article_path %>
