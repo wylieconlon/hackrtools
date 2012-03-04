@@ -104,11 +104,10 @@ pre table {
 	background:#F5F5F5;
 }
 
-.hckrsnippet span {
+.hckrsnippet > span {
 	margin-left: 10px;
-	text-decoration: underline;
 }
-.hckrsnippet span:hover {
+.hckrsnippet > span:hover {
 	color: red;
 	cursor: pointer;
 	text-decoration: underline;
