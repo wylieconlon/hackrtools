@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
+
   # GET /items
   # GET /items.json
   def index
