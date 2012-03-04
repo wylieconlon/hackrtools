@@ -1,7 +1,11 @@
 Hckrtools::Application.routes.draw do
   resources :items
-  resources :articles
-  resources :snippets
+  resources :articles do
+    get 'form', :on => :collection
+  end
+  resources :snippets do
+    get 'form', :on => :collection
+  end
 
   devise_for :users
 
