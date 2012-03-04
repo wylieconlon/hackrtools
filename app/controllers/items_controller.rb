@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
 
-    puts "#{@items}"
+    # @tags = Item.tag_counts_on(:tags)
 
     respond_to do |format|
       format.html # index.html.erb

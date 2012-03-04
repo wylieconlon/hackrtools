@@ -10,10 +10,23 @@ body {
 .content {
 	background: #fff;
 
-	padding: 15px;
-	border: 1px solid #ddd;
 	margin-bottom: 2em;
 	@include border-radius(5px);
+}
+
+header {
+	position: relative;
+}
+
+.actions {
+	padding: 1em 0;
+}
+.actions a {
+	display: inline-block;
+	padding: 5px;
+	background: $blue;
+	color: #fff;
+	@include border-radius(3px);
 }
 
 .item {

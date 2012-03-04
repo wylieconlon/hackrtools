@@ -11,11 +11,6 @@
 
   <header>
 	<h1><%= link_to image_tag('logo.png'), root_path %></h1>
-
-	<div class="actions">
-	<%= link_to 'New Article', new_article_path %>
-	<%= link_to 'New Snippet', new_snippet_path %>
-	</div>
   </header>
   
   <% flash.each do |name, msg| %>
@@ -26,7 +21,17 @@
   <% end %>
 
   <div class="content">
-  <%= yield %>
+  	<div class="row">
+  	<div class="span8">
+	<%= yield %>
+	</div>
+	
+	<div class="actions span4">
+	<%= link_to 'New Article', new_article_path %>
+	<%= link_to 'New Snippet', new_snippet_path %>
+	
+	</div>
+	</div>
   </div>
   
   <footer>
