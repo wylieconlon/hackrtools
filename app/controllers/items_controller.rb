@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_filter :authenticate_user!
   skip_before_filter :authenticate_user!, :only => [:index, :show]
 
+  before_filter :join_tag_list, :only => [:create, :update]
+
   # GET /items
   # GET /items.json
   def index
@@ -39,6 +41,7 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
+    split_tag_list
   end
 
   # PUT /items/1
@@ -69,8 +72,7 @@ class ItemsController < ApplicationController
     end
   end
 
-private
-
+  private
   def setup_sti_model
     # This lets us set the "type" attribute from forms and querystrings
     model = nil
@@ -81,6 +83,14 @@ private
     @item.type = model
   end
 
+  private
+  def join_tag_list
+    # Split the tags on spaces, join with commas
+    params[:item][:tag_list] = params[:item][:tag_list].split(" ").join(", ")
+  end
 
+  def split_tag_list
+    @item.tag_list = @item.tag_list.join(" ")
+  end
 
 end
