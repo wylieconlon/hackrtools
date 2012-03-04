@@ -35,13 +35,22 @@ hckrtools = {
 			hckrtools.copy(text);
 		});
 		snippet.find('.save').click(function() {
-			hckrtools.openSaveDialog(text);
+			hckrtools.save(text, snippet);
 		});
 	},
 	copy: function(text) {
 		
 	},
-	openSaveDialog: function(text) {
+	save: function(text, snip) {
+		hckrtools.saveDialog.save(text, snip);	
+	},
+	saveSuccess: function(snip) {
+		if(snip !== null) {
+			snip.find('.save').text("Edit");
+			snip.find('.save').click(	
+		} 
+	},
+	edit: function(snip) {
 		
 	},
 	flatten: function($, $el) {
@@ -55,7 +64,12 @@ hckrtools = {
 		var sh=document.createElement('script')
 		sh.setAttribute("type","text/javascript")
 		sh.setAttribute("src", "http://hackrtools.com/js/jquery.syntaxhighlighter.min.js")
+		var saving=document.createElement('script')
+		saving.setAttribute("type","text/javascript")
+		saving.setAttribute("src", "http://hackrtools.com/js/saveDialog.js")
+		document.getElementsByTagName("head")[0].appendChild(saving)
 		document.getElementsByTagName("head")[0].appendChild(sh)
+
 	},
 	init: function($) {
 		var that = hckrtools;
