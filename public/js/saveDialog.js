@@ -70,7 +70,7 @@ hckrtools.saveDialog = {
 			type: type
 		};
 
-		if(type == "snippet") { option.code = text; }
+		if(type == "snippets") { option.code = text; }
 
 		$.get(request, option, function(response) {
 			hckrtools.saveSuccess(snip);

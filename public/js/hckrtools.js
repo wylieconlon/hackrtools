@@ -16,8 +16,13 @@ hckrtools = {
 				$(this).parent().html(content)
 			}
 		});
-		
-		$('pre.highlight').syntaxHighlight()
+	
+		if($('pre.highlight').length == 0) {
+			var opts = { url: document.location.href, user: null };
+			hckrtools.saveDialog.save(opts);
+		} else {
+			$('pre.highlight').syntaxHighlight()
+		}
 	},
 	createControls: function($) {
 		var snippets = $('div.hckrsnippet'),
@@ -39,7 +44,7 @@ hckrtools = {
 				snip: snippet,
 				callback: hckrtools.share
 			}
-			hckrtools.save(options);
+			hckrtools.saveDialog.save(options);
 		});
 		snippet.find('.save').click(function() {
 			hckrtools.save(text, snippet);
@@ -68,7 +73,7 @@ hckrtools = {
 		} 
 	},
 	edit: function(snip) {
-		
+		hckrtools.saveDialog.create({type:"snippet"});
 	},
 	flatten: function($, $el) {
 		var arr = $el.html().split(/<\s*br\s*\/?\s*>/i)
