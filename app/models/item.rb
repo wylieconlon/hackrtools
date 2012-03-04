@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :title, :link, :public, :type
+  attr_accessible :title, :link, :public, :type, :code
 
   def self.inherited(child)
     child.instance_eval do
