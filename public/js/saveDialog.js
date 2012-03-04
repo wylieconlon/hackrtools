@@ -45,7 +45,7 @@ hckrtools.saveDialog = {
 		    snip = options.snip || null,
 		    that = hckrtools.saveDialog;
 	
-		var request = "http://hackrtools.com/" + type + "/" + id + "/edit";
+		var request = "http://hackrtools.com/" + type + "/" + id + "/form";
 
 		$.get(request, callback);
 	},
@@ -61,16 +61,16 @@ hckrtools.saveDialog = {
 		    func = options.callback || null,
 		    that = hckrtools.saveDialog;
 		
-		var request = "http://hackrtools.com/" + type + "/new"
+		var request = "http://hackrtools.com/add/" + type;
 
 		var option = {
 			title: document.title,
 			link: url,
 			'public': true,
-			type: type
+			uid: uid
 		};
 
-		if(type == "snippet") { option.code = text; }
+		if(type == "snippets") { option.code = text; }
 
 		$.get(request, option, function(response) {
 			hckrtools.saveSuccess(snip);
@@ -78,6 +78,8 @@ hckrtools.saveDialog = {
 			if(func) {
 				func(response);
 			}	
+		}).error(function() {
+			alert('Sorry! Something went wrong');
 		});
 
 		that.savingShow();

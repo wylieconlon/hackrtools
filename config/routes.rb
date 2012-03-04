@@ -5,13 +5,17 @@ Hckrtools::Application.routes.draw do
   #  match '/add/:type/*args' => 'items#add'
 
   resources :articles do
-    get 'form', :on => :collection
     get 'create', :on => :collection
+    member do
+      get 'form'
+    end
   end
 
   resources :snippets do
-    get 'form', :on => :collection
     get 'create', :on => :collection
+    member do
+      get 'form'
+    end
   end
 
   match '/items/tagged/:tags/' => 'items#tagged'
