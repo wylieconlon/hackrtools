@@ -1,5 +1,6 @@
 body {
-	background: #fdf6e3;
+	//background: #fdf6e3;
+	background: $grayLighter;
 }
 
 .container {
@@ -9,6 +10,9 @@ body {
 
 .content {
 	background: #fff;
+	@include border-radius(5px);
+	//border: 1px solid #eee8d5;
+	border: 1px solid #ddd;
 }
 
 .item {
