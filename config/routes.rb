@@ -1,5 +1,4 @@
 Hckrtools::Application.routes.draw do
-<<<<<<< HEAD
   resources :items
   resources :articles do
     get 'form', :on => :collection
@@ -10,15 +9,9 @@ Hckrtools::Application.routes.draw do
 
   get 'tags/:query', :to => 'tags#nearest'
 
-  resources :items
-=======
   resources :items do
     get 'add'
   end
-
-  resources :articles
-  resources :snippets
->>>>>>> master
 
   devise_for :users
 
