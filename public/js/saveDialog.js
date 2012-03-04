@@ -80,6 +80,7 @@ hckrtools.saveDialog = {
 			}	
 		}).error(function(response) {
 			alert('Sorry! Something went wrong');
+			that.savingHide();
 		});
 
 		that.savingShow();
