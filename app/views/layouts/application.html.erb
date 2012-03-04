@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hckrtools</title>
+  <title>Hackrtools</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
 
-  <header>
-    <hgroup>
-      <h1>Hackr Tools</h1>
-      <h2>Toolboxes for developers</h2>
-    </hgroup>
-  </header>
+  <h1><%= link_to "Hackr Tools", root_path %></h1>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
+  <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= msg %>
+    </div>
+  <% end %>
 
   <%= yield %>
 
+  </div>
 </body>
 </html>

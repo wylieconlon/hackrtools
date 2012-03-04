@@ -1,0 +1,7 @@
+<h1>Listing articles</h1>
+
+<div class="articles">
+<%= render_cell :items, :list, :items => @articles %>
+</div>
+
+<%= link_to 'New Article', new_article_path %>
