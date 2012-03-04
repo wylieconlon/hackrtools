@@ -1,4 +1,4 @@
-<%= form_for(@item) do |f| %>
+<%= form_for @item, :url => { :action => 'create' } do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -20,16 +20,8 @@
     <%= f.text_field :link %>
   </div>
   <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
     <%= f.label :public %><br />
     <%= f.check_box :public %>
-  </div>
-  <div class="field">
-  	<%= f.label :tags %><br />
-  	<%= f.text_field :tag_list %>
   </div>
   <div class="actions">
     <%= f.submit %>
