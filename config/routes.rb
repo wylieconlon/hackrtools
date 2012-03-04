@@ -9,9 +9,10 @@ Hckrtools::Application.routes.draw do
 
   get 'tags/:query', :to => 'tags#nearest'
 
+  resources :items
+
   devise_for :users
 
-  get "home/index"
   root :to => 'home#index'
 
   # Login routes
