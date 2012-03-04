@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120303213625) do
+ActiveRecord::Schema.define(:version => 20120303225442) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20120303213625) do
   end
 
   create_table "snippets", :force => true do |t|
-    t.text     "title"
+    t.string   "title"
     t.string   "link"
     t.text     "code"
     t.boolean  "public",     :default => true
