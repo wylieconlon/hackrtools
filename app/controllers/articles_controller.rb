@@ -4,6 +4,8 @@ class ArticlesController < ItemsController
   def create
     puts "Saving article: #{params}"
     
+    params[:item][:type] = "Article"
+    
     @item = Item.new(params[:item])
     
     respond_to do |format|

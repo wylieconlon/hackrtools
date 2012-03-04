@@ -5,7 +5,7 @@
   Source: <%= @item.link || "None" %><br>
 <% end %>
 
-<% if defined? @item.code %>
+<% if defined?(@item.code) && !@item.code.nil? %>
 	<pre><%= @item.code %></pre>
 <% end %>
 </li>

@@ -4,6 +4,8 @@ class SnippetsController < ItemsController
   def create
     puts "Saving snippet: #{params}"
     
+    params[:item][:type] = "Article"
+    
     @item = Item.new(params[:item])
     
     respond_to do |format|
