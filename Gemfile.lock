@@ -31,6 +31,9 @@ GEM
     arel (3.0.2)
     bootstrap-sass (2.0.1)
     builder (3.0.0)
+    cells (3.8.2)
+      actionpack (~> 3.0)
+      railties (~> 3.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -112,6 +115,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  cells
   coffee-rails (~> 3.2.1)
   jquery-rails
   pg

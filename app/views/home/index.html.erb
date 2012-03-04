@@ -1,27 +1,11 @@
 <h2>Supafly Snippets</h2>
 
 <div class="snippets">
-<% if not @snippets.empty? %>
-<ul>
-<% for item in @snippets %>
-	<%= render :partial => "partials/item", :locals => { :item => item } %>
-<% end %>
-</ul>
-<% else %>
-No snippets :(
-<% end %>
+<%= render_cell :items, :list, :items => @snippets %>
 </div>
 
 <h2>Ballin Articles</h2>
 
 <div class="articles">
-<% if not @articles.empty? %>
-<ul>
-<% for item in @articles %>
-	<%= render :partial => "partials/item", :locals => { :item => item } %>
-<% end %>
-</ul>
-<% else %>
-No articles :(
-<% end %>
+<%= render_cell :items, :list, :items => @articles %>
 </div>
