@@ -1,7 +1,8 @@
 <h1>Listing items</h1>
 
-<% @items.each do |item| %>
-  <%= render item %>
+<% @items.each do |item|  %>
+  <% render :partial => 'items/item', :locals => {:item => item } %>
 <% end %>
 
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'New Article', new_article_path %>
+<%= link_to 'New Snippet', new_snippet_path %>
