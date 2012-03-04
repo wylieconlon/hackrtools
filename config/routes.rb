@@ -1,11 +1,15 @@
 Hckrtools::Application.routes.draw do
   resources :items
+
   resources :articles do
     get 'form', :on => :collection
   end
+  
   resources :snippets do
     get 'form', :on => :collection
   end
+
+  match '/items/tagged/:tags/' => 'items#tagged'
 
   get 'tags/:query', :to => 'tags#nearest'
 
