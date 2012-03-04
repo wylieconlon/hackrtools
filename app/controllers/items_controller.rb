@@ -45,8 +45,9 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     setup_sti_model
-    @item = Item.new(params[:item])
 
+    @item = Item.new(params[:item])
+    
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
