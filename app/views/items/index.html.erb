@@ -1,25 +1,7 @@
 <h1>Listing items</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Link</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @items.each do |item| %>
-  <tr>
-    <td><%= item.title %></td>
-    <td><%= item.link %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <%= render item %>
 <% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Item', new_item_path %>
