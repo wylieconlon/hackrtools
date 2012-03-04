@@ -1,11 +1,11 @@
 <h2>Supafly Snippets</h2>
 
-<% @snippets.each do |s| %>
-  <li><%= link_to s.title, s %></li>
-<% end %>
+<div class="snippets">
+<%= render_cell :items, :list, :items => @snippets %>
+</div>
 
 <h2>Ballin Articles</h2>
 
-<% @articles.each do |a| %>
-  <li><%= link_to a.title, a %></li>
-<% end %>
+<div class="articles">
+<%= render_cell :items, :list, :items => @articles %>
+</div>
