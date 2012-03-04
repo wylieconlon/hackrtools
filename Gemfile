@@ -20,7 +20,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
-#  gem 'bootstrap-sass'
+  gem 'bootstrap-sass'
+
 #  gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git'  # Nice form builder
 #  gem 'tabulous', '~> 1.2.0'  # Navigation tabs
 
