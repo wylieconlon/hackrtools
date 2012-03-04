@@ -94,9 +94,8 @@ private
     if !params[:item].blank? and !params[:item][:type].blank?
       model = params[:item].delete(:type).constantize.to_s
     end
-      @item = Item.new(params[:item])
-      @item.type = model
-    end
+    @item = Item.new(params[:item])
+    @item.type = model
   end
 
 
