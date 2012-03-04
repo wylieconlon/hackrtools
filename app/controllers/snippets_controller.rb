@@ -1,10 +1,11 @@
 class SnippetsController < ItemsController
+  # GET  /items
   # POST /items
   # POST /items.json
   def create
     puts "Saving snippet: #{params}"
     
-    params[:item][:type] = "Article"
+    params[:item][:type] = "Snippet"
     
     @item = Item.new(params[:item])
     
