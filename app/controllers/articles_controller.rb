@@ -16,4 +16,8 @@ class ArticlesController < ItemsController
       end
     end
   end
+
+  def form
+    render :text => "This is my articles form"
+  end
 end
