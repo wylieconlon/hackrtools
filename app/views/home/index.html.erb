@@ -1,11 +1,5 @@
-<h2>Supafly Snippets</h2>
 
-<% @snippets.each do |s| %>
-  <li><%= link_to s.title, s %></li>
+<% @items.each do |i| %>
+  <li><%= link_to i.title, i %></li>
 <% end %>
 
-<h2>Ballin Articles</h2>
-
-<% @articles.each do |a| %>
-  <li><%= link_to a.title, a %></li>
-<% end %>
