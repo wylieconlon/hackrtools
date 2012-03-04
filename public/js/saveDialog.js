@@ -72,7 +72,7 @@ hckrtools.saveDialog = {
 
 		if(type == "snippet") { option.code = text; }
 
-		$.get(request, option, function(response) {
+		$.post(request, option, function(response) {
 			hckrtools.saveSuccess(snip);
 			that.savingHide();
 			if(func) {
