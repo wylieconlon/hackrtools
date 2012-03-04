@@ -1,0 +1,7 @@
+<h1>Listing items</h1>
+
+<% @items.each do |item| %>
+  <%= render item %>
+<% end %>
+
+<%= link_to 'New Item', new_item_path %>

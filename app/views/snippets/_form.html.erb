@@ -1,10 +1,10 @@
-<%= form_for(@snippet) do |f| %>
-  <% if @snippet.errors.any? %>
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@snippet.errors.count, "error") %> prohibited this snippet from being saved:</h2>
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
       <ul>
-      <% @snippet.errors.full_messages.each do |msg| %>
+      <% @item.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -13,16 +13,24 @@
 
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_area :title %>
+    <%= f.text_field :title %>
   </div>
+
   <div class="field">
     <%= f.label :link %><br />
     <%= f.text_field :link %>
   </div>
+
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+
   <div class="field">
     <%= f.label :code %><br />
     <%= f.text_area :code %>
   </div>
+
   <div class="field">
     <%= f.label :public %><br />
     <%= f.check_box :public %>
