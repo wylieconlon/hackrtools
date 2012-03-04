@@ -1,5 +1,8 @@
 Hckrtools::Application.routes.draw do
-  resources :items
+  resources :items do
+    get 'add'
+  end
+
   resources :articles
   resources :snippets
 
