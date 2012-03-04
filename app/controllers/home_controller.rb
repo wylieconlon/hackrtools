@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @snippets = SnippetsController::Snippet.all
-    @articles = ArticlesController::Article.all
+    @snippets = Snippet.all
+    @articles = Article.all
   end
 end
