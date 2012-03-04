@@ -1,5 +1,11 @@
 class HomeController < ApplicationController
   def index
-    @items = Item.all
+    # show dashboard for authenticated users
+    if !current_user.nil?
+      @items = Item.all
+      render 'items/index'
+    end
+
+    # otherwise go to splash page
   end
 end

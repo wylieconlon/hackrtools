@@ -1,9 +1,16 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
+
+  before_filter :join_tag_list, :only => [:create, :update]
+
   # GET /items
   # GET /items.json
   def index
     @items = Item.all
-
+    
+    puts "#{@items}"
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @items }
@@ -24,6 +31,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   # GET /items/new.json
   def new
+    setup_sti_model
     @item = Item.new
 
     respond_to do |format|
@@ -35,24 +43,7 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
-  end
-
-  # POST /items
-  # POST /items.json
-  def create
-    puts "#{params}"
-    
-    @item = Item.new(params[:item])
-    
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render json: @item, status: :created, location: @item }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
+    split_tag_list
   end
 
   # PUT /items/1
@@ -82,4 +73,26 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  def setup_sti_model
+    # This lets us set the "type" attribute from forms and querystrings
+    model = nil
+    if !params[:item].blank? and !params[:item][:type].blank?
+      model = params[:item].delete(:type).constantize.to_s
+    end
+    @item = Item.new(params[:item])
+    @item.type = model
+  end
+
+  private
+  def join_tag_list
+    # Split the tags on spaces, join with commas
+    params[:item][:tag_list] = params[:item][:tag_list].split(" ").join(", ")
+  end
+
+  def split_tag_list
+    @item.tag_list = @item.tag_list.join(" ")
+  end
+
 end
