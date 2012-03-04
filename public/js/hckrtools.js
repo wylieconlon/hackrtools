@@ -1,6 +1,12 @@
 hckrtools = {
 	isolateElements: function($) {
-		var snippets = $('pre, code:not(pre :first-child), .syntaxHighlight');
+		var specials = $('.gist pre');
+		$.each(specials, function(i, val) {
+			console.log(this);
+		});
+		
+		var snippets = $('pre, code:not(pre :first-child), .syntaxHighlight')
+						.not(specials);
 		$.each(snippets, function(i, val) {
 			if($(this).css('display') == 'block') {
 				var content = hckrtools.flatten($, $(this))
@@ -9,6 +15,7 @@ hckrtools = {
 				$(this).parent().html(content)
 			}
 		});
+		
 		$('pre.highlight').syntaxHighlight()
 	},
 	createControls: function($) {
