@@ -1,10 +1,8 @@
 Hckrtools::Application.routes.draw do
 
-  #resources :items do
-  #  get 'add', :to => 'items#add'
-  #end
+  match '/add/:type' => 'items#add'
 
-    match '/:type/add/*args' => 'items#add'
+  #  match '/add/:type/*args' => 'items#add'
 
   resources :articles do
     get 'form', :on => :collection
