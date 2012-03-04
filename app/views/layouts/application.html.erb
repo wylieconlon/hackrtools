@@ -9,7 +9,7 @@
 <body>
   <div class="container">
 
-  <h1><%= link_to "Hackr Tools", root_path %></h1>
+  <h1><%= link_to image_tag('logo.png'), root_path %></h1>
 
   <% flash.each do |name, msg| %>
     <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
