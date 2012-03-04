@@ -31,7 +31,7 @@ hckrtools = {
 	},
 	bindControls: function($, snippet) {
 		var text = hckrtools.flatten($, snippet.find('pre'));
-		snippet.find('.copy').click(function() {
+		snippet.find('.share').click(function() {
 			var options = {
 				text: text,
 				url: document.location.href,
@@ -49,6 +49,7 @@ hckrtools = {
 		var share = document.createElement('div')
 		share.setAttribute('class', 'hckrShare')
 		$('body').append(share);
+		$('.hckrShare').html(hckrtools.shareTemplate(opts.link));
 	},
 	save: function(text, snip) {
 		var options = {
@@ -63,7 +64,7 @@ hckrtools = {
 	saveSuccess: function(snip) {
 		if(snip !== null) {
 			snip.find('.save').text("Edit");
-			snip.find('.save').click(hckrtools.edit);	
+			snip.find('.save').click(hckrtools.edit);
 		} 
 	},
 	edit: function(snip) {
@@ -108,4 +109,30 @@ hckrtools = {
 		document.getElementsByTagName("head")[0].appendChild(a)
 	}
 }
+
+hckrtools.shareTemplate = function(url) {
+	return '<!-- Required by FB -->' +
+		'<div id="fb-root"></div>' +
+		'<script>(function(d, s, id) {' +
+		'  var js, fjs = d.getElementsByTagName(s)[0];' +
+		'  if (d.getElementById(id)) return;' +
+		'  js = d.createElement(s); js.id = id;' +
+		'  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1";' +
+		'  fjs.parentNode.insertBefore(js, fjs);' +
+		"}(document, 'script', 'facebook-jssdk'));</script>" +
+		'<ul>' +
+		'<li>' +
+		'<!-- Twitter -->' +
+		'  <a href="https://twitter.com/share" class="twitter-share-button" data-url="' + url + '" data-text="Take a look at this code I just saved" data-count="none" data-hashtags="hackrtoolkit" target="_blank">' +
+		'  <div class="b2-widget-btn">' +
+		'<i></i><span class="b2-widget-label">Tweet</span>' +
+		'     </div></a>' +
+		'<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>' +
+		'</li>' +
+		'<li>' +
+		'<!-- Facebook -->' +
+		'<div class="fb-send" data-href="' + url + '" data-font="arial"></div>' +
+		'</li>' +
+		'</ul>';
+};
 hckrtools.load()
