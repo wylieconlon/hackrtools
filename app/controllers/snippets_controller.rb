@@ -1,4 +1,6 @@
 class SnippetsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new, :create, :edit, :delete]
+
   # GET /snippets
   # GET /snippets.json
   def index
