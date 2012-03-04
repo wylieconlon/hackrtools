@@ -1,17 +1,3 @@
-
-<<<<<<< HEAD
-<div class="snippets">
-<%= render_cell :items, :list, :items => @snippets %>
-</div>
-
-<h2>Ballin Articles</h2>
-
-<div class="articles">
-<%= render_cell :items, :list, :items => @articles %>
-</div>
-=======
 <% @items.each do |i| %>
   <li><%= link_to i.title, i %></li>
 <% end %>
-
->>>>>>> items
