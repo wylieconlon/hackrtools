@@ -1,0 +1,46 @@
+.b2-widget {
+	font: normal normal normal 11px/1.7 "Helvetica Neue", Arial, sans-serif;
+	color: #333;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.b2-widget-btn {
+	position: relative;
+	float: left;
+	height: 18px;
+	font-weight: bold;
+	color: #333;
+	text-decoration: none;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	white-space: nowrap;
+	vertical-align: top;
+	background-color: white;
+	background-image: -moz-linear-gradient(top, #ffffff, #dedede);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dedede));
+	background-image: -ms-linear-gradient(top, #ffffff, #dedede);
+	background-image: linear-gradient(top, #ffffff, #dedede);
+	background-image: -o-linear-gradient(top, #ffffff, #dedede);
+	border: #CCC solid 1px;
+	-webkit-border-radius: 3px;
+	 -moz-border-radius: 3px;
+	      border-radius: 3px;
+	outline: none;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#dedede');
+}
+.b2-widget-btn i {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 16px;
+	height: 16px;
+	background: transparent url(https://si0.twimg.com/a/1330626450/images/b2_btn_icon.gif) 0 0 no-repeat;
+}
+.b2-widget-label {
+	display: inline-block;
+	*display: inline;
+	padding: 0 3px 0 19px;
+	zoom: 1;
+}
