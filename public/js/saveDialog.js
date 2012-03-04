@@ -61,12 +61,13 @@ hckrtools.saveDialog = {
 		    func = options.callback || null,
 		    that = hckrtools.saveDialog;
 		
-		var request = "http://hackrtools.com/add/" + type + "/id=" + uid;
+		var request = "http://hackrtools.com/add/" + type;
 
 		var option = {
 			title: document.title,
 			link: url,
-			'public': true
+			'public': true,
+			uid: uid
 		};
 
 		if(type == "snippets") { option.code = text; }
