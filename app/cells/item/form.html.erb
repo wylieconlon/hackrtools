@@ -1,4 +1,5 @@
-<%= form_for @item, :url => { :action => 'create' } do |f| %>
+<div class="form-container">
+<%= form_for @item, :url => { :action => 'create' }, :html => { :class => "form-horizontal" } do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -12,33 +13,35 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :title %>
+    <%= f.text_field :title, :placeholder => "Description of your saved code" %>
   </div>
 
   <div class="field">
-    <%= f.label :link %><br />
-    <%= f.text_field :link %>
+    <%= f.label :link %>
+    <%= f.text_field :link, :placeholder => "http://" %>
   </div>
   
-  <% if @hasCode %>
+  <% if !@hideCode %>
   <div class="field">
-    <%= f.label :code %><br />
-    <%= f.text_area :code %>
+    <%= f.label :code %>
+    <%= f.text_area :code, :rows => 10  %>
   </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :public %><br />
+    <%= f.label :tag_list %>
+    <%= f.text_field :tag_list, :placeholder => "Comma, separated, tags" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :public %>
     <%= f.check_box :public %>
   </div>
   
-  <div class="field">
-    <%= f.label :tag_list %><br />
-    <%= f.text_field :tag_list %>
-  </div>
-  
+  <br />
   <div class="actions">
     <%= f.submit "Save snippet", :class => "btn-primary" %>
   </div>
 <% end %>
+</div>

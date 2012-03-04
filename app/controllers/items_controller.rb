@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
-  before_filter :authenticate_user!
-  skip_before_filter :authenticate_user!, :only => [:index, :show, :add]
+  #before_filter :authenticate_user!
+  #skip_before_filter :authenticate_user!, :only => [:index, :show, :add]
 
+  after_filter :set_access_control_headers
   before_filter :join_tag_list, :only => [:create, :update]
 
   # GET /items
@@ -9,7 +10,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
 
-    puts "#{@items}"
+    # @tags = Item.tag_counts_on(:tags)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -64,12 +65,12 @@ class ItemsController < ApplicationController
   #          tags     string  A list of tags (ruby-on-rails+web-development)
   #
   def add
-    @user = User.self.where("email = ?", params[:uid])
+    @user = User.where(:email => params[:uid])
     @item = Item.new(:title => params[:title], :link => params[:link],
                      :public => params[:public], :type => params[:type],
                      :code => params[:code], :tags => params[:tags])
 
-    @item.user = @user
+    #@item.user = @user
 
     respond_to do |format|
       if @item.save
