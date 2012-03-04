@@ -3,18 +3,22 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
+pre html, pre body, pre div, pre span, pre applet,
+pre object, pre iframe, pre h1, pre h2, pre h3,
+pre h4, pre h5, pre h6, pre p, pre blockquote, pre,
+pre a, pre abbr, pre acronym, pre address, pre big, 
+pre cite, pre code, pre del, pre dfn, pre em, pre img,
+pre ins, pre kbd, pre q, pre s, pre samp,
+pre small, pre strike, pre strong, pre sub, pre sup,
+pre tt, pre var, pre b, pre u, pre i, pre center,
+pre dl, pre dt, pre dd, pre ol, pre ul, pre li,
+pre fieldset, pre form, pre label, pre legend,
+pre table, pre caption, pre tbody, pre tfoot, 
+pre thead, pre tr, pre th, pre td,
+pre article, pre aside, pre canvas, pre details,
+pre embed, pre figure, pre figcaption, pre footer, 
+pre header, pre hgroup, pre menu, pre nav, pre output,
+pre ruby, pre section, pre summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -24,25 +28,25 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+pre article, pre aside, pre details, pre figcaption, pre figure, 
+pre footer, pre header, pre hgroup, pre menu, pre nav, pre section {
 	display: block;
 }
-body {
+pre body {
 	line-height: 1;
 }
-ol, ul {
+pre ol, pre ul {
 	list-style: none;
 }
-blockquote, q {
+pre blockquote, pre q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+pre blockquote:before, pre blockquote:after,
+pre q:before, pre q:after {
 	content: '';
 	content: none;
 }
-table {
+pre table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
@@ -52,6 +56,7 @@ table {
 }
 .prettyprint ol.linenums {
 	list-style: decimal outside;
+	padding-left: 47px;
 	color:#AFAFAF;
 	font-size:12px;
 }
