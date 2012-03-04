@@ -2,6 +2,6 @@ class ItemsCell < Cell::Rails
   def list(args)
     @items = args[:items]
     
-    return render
+    render
   end
 end

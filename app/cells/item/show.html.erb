@@ -1,9 +1,21 @@
-<li>
-<%= link_to @item.title, @item.link %>
+<li class="item <%= @hasCode ? 'snippet' : 'article' %>">
+<h3>
+<%= link_to @item.title, @item.link, :class => 'title' %>
+<span class="ago"><%= @timeAgo %></span>
+</h3>
 
 <% if defined?(@item.code) && !@item.code.nil? %>
 	<pre><%= @item.code %></pre>
 <% end %>
 
+<div class="tags">
+<% for tag in @tags %>
+	<span class="content-tag">
+	<a href="/items/tagged/<%= tag.name %>">
+	<%= tag.name %>
+	</a>
+	</span>
+<% end %>
+</div>
 
 </li>

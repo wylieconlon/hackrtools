@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
+
+//# require jquery.syntaxhighlighter.min.js
+
+$.SyntaxHighlighter.init({
+	lineNumbers:true,
+	stripEmptyStartFinishLines:true
+});

@@ -1,3 +1,5 @@
-// override SASS variables here
+$blue: #2AA198;
+$linkColor: $blue;
 
-@import "bootstrap"
+@import "bootstrap";
+@import "main";
