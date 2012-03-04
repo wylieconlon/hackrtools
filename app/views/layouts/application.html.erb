@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hackrtools</title>
+  <title>Hackr Tools</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="container">
-
-  <h1><%= link_to "Hackr Tools", root_path %></h1>
-
+  
+  <header>
+    <h1><%= link_to "Hackr Tools", root_path %></h1> 
+  </header>
+  
   <% flash.each do |name, msg| %>
     <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
       <a class="close" data-dismiss="alert">×</a>
@@ -18,7 +20,13 @@
     </div>
   <% end %>
 
+  <div class="content">
   <%= yield %>
+  </div>
+  
+  <footer>
+  Built by <a href="http://wylieconlon.com">Wylie Conlon</a>, Eric Kelly, and <a href="http://ali.io">Ali Ukani</a>
+  </footer>
 
   </div>
 </body>
