@@ -1,17 +1,26 @@
 Hckrtools::Application.routes.draw do
-  resources :items
-  resources :articles do
-    get 'form', :on => :collection
-  end
-  resources :snippets do
-    get 'form', :on => :collection
-  end
-
-  get 'tags/:query', :to => 'tags#nearest'
 
   resources :items do
     get 'add'
   end
+
+  resources :articles do
+    get 'create', :on => :collection
+    member do
+      get 'form'
+    end
+  end
+
+  resources :snippets do
+    get 'create', :on => :collection
+    member do
+      get 'form'
+    end
+  end
+
+  match '/items/tagged/:tags/' => 'items#tagged'
+
+  get 'tags/:query', :to => 'tags#nearest'
 
   devise_for :users
 

@@ -8,14 +8,30 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
-    
+
     puts "#{@items}"
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @items }
     end
   end
+
+
+  # Returns posts tagged with all of the given tags
+  # GET /items/tagged/ruby-on-rails+web-development+web-design
+  # GET /items/tagged/ruby-on-rails+web-development+web-design.json
+  def tagged
+    @tags = params[:tags]
+    @tags = @tags.split("+").collect { |t| t.split("-").join(" ") }
+    @items = Item.tagged_with(@tags, :any => true)
+
+    respond_to do |format|
+      format.html # tagged.html.erb
+      format.json { render json: @items }
+    end
+  end
+
 
   # GET /items/1
   # GET /items/1.json
