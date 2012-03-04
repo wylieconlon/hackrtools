@@ -1,12 +1,13 @@
 hckrtools = {
 	isolateElements: function($) {
-		var specials = $('.gist pre');
-		$.each(specials, function(i, val) {
-			console.log(this);
+		var gists = $('.gist');
+		$.each(gists, function(i, val) {
+			var id = this.id.match(/[0-9]+/);
+			var raw = "https://raw.github.com/gist/"+id;
 		});
 		
 		var snippets = $('pre, code:not(pre :first-child), .syntaxHighlight')
-						.not(specials);
+						.not(gists);
 		$.each(snippets, function(i, val) {
 			if($(this).css('display') == 'block') {
 				var content = hckrtools.flatten($, $(this))
@@ -58,11 +59,21 @@ hckrtools = {
 	},
 	init: function($) {
 		var that = hckrtools;
-		$.SyntaxHighlighter.init({lineNumbers:true,stripEmptyStartFinishLines:true});
+		
+		if($ === undefined) {
+			$ = jQuery;
+		} else {
+			
+		}
+		
+		$.SyntaxHighlighter.init({
+			lineNumbers:true,
+			stripEmptyStartFinishLines:true
+		});
 		that.isolateElements($);
 		that.createControls($);
 
-		if(jQueryOld != undefined) {
+		if(typeof jQueryOld !== "undefined") {
 			$ = jQueryOld.noConflict(true);
 		}
 	}
