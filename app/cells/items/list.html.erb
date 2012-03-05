@@ -1,7 +1,7 @@
 <% if not @items.empty? %>
 
 <ul class="items-list unstyled">
-<% for item in @items %>
+<% for item in @items.reverse %>
 	<%= render_cell :item, :show, :item => item %>
 <% end %>
 </ul>
